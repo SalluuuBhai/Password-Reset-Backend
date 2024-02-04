@@ -200,7 +200,7 @@ router.post("/forgetPassword", async (req, res) => {
       let token = await createForgetToken({ id: user._id });
 
       //send mail
-      const url = `http://localhost:3000/reset-password/${token}`;
+      const url = `https://user-form-login-signup.netlify.app/reset-password/${token}`;
       const name = user.userName;
       const email = user.email;
       SendResetEmail(email, url, "Reset Your Password", name);
